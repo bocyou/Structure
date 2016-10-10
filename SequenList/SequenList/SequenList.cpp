@@ -37,3 +37,19 @@ int SequenList::Deleted(int i){//时间性能分析
 		return 1;
 	}
 }
+int SequenList::Locate(DataType x){
+	int j = 0;
+	while ((j < len) && (data[j] != x))j++;
+	if (j < len) return j + 1;
+	else return 0;
+}
+DataType SequenList::Get(int i){//读取id对应的值
+	if ((i<1) || (i>len)){
+		cout << "position is not correct!" << endl;
+		return NULL;
+	}
+	else return data[i - 1];
+}
+int SequenList::Length(){
+	return len;
+}
